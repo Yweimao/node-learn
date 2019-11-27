@@ -1,0 +1,27 @@
+1. server开发和前端开发的区别: 
+
+  . 服务稳定性 (PM2 进程守候 保证服务的稳定性)
+  . 考虑内存和cup(优化和扩展)   (stream写日志, 使用redis存session)
+  . 日志记录  
+  . 安全  (登录验证, 预防xss攻击和sql注入)
+  . 集群和服务拆分  
+  
+2. 开发环境搭建 
+  
+  . 从零开始搭建, 不使用任何框架
+  . 使用nodemon监测文件变化, 自动重启node
+  . 使用cross-env 设置环境变量, 兼容max linux和windows
+  
+3. 接口规范
+  
+	博客相关接口: 
+  
+	获取博客列表  /api/blog/list    get
+	获取博客详情  /api/blog/detail  get
+	新建一篇博客  /api/blog/new     post
+	更新一篇博客  /api/blog/update  post
+	删除一篇博客  /api/blog/del     post
+	
+	用户相关接口: 
+	
+	用户登录接口  /api/user/login   post
