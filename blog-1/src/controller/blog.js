@@ -14,6 +14,22 @@ const getList = (author, keyword) => {
     ]
 }
 
+const getDetail = (id) => {
+    return {
+        id: 1,
+        title: '标题A',
+        createTime: 1574843873418,
+        author: 'zhangsan'
+    }
+}
+const newBlog = (postData) => {
+    console.log('postdata', postData)
+    return {
+        id: '1'
+    };
+}
 module.exports = {
-    getList
+    getList,
+    getDetail,
+    newBlog
 }
