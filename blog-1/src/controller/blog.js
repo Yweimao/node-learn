@@ -1,17 +1,17 @@
+const {
+    exec
+} = require('../db/mysql')
 const getList = (author, keyword) => {
-    return [{
-            id: 1,
-            title: '标题A',
-            createTime: 1574843873418,
-            author: 'zhangsan'
-        },
-        {
-            id: 2,
-            title: '标题B',
-            createTime: 1574843911423,
-            author: 'lisi'
-        }
-    ]
+    let sql = `select * from blogs where 1=1 `
+    if (author) {
+        sql += `and author='${author}' `
+    }
+    if (keyword) {
+        sql += `and title like '%${keyword}%' `
+    }
+    sql += `order by createtime desc;`
+    //返回promise
+    return exec(sql)
 }
 
 const getDetail = (id) => {

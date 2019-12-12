@@ -25,3 +25,43 @@
 	用户相关接口: 
 	
 	用户登录接口  /api/user/login   post
+
+4. 常见的sql 语句
+
+
+use myblog;
+-- show tables;
+
+
+-- 表单插入 
+-- INSERT INTO users(username, `PASSWORD`, realname) VALUES('lisi', '123', '李四')
+
+-- 表单查询
+-- SELECT * FROM users;
+-- SELECT id, username FROM users;
+ 
+-- 并集查询 and
+-- SELECT * FROM users WHERE username ='zhangsan' AND `password` = '123'
+
+
+-- 交集查询 OR
+-- SELECT * FROM users WHERE username ='zhangsan' or `password` = '123'
+
+-- 模糊查询
+-- SELECT * FROM users WHERE `password` LIKE '%123%';
+
+-- 正序查询
+-- SELECT * FROM users WHERE `password` LIKE '%123%' ORDER BY id;
+
+-- 倒序查询
+-- SELECT * FROM users WHERE `password` LIKE '%123%' ORDER BY id DESC;
+
+-- 更新
+-- UPDATE users SET realname='李四2' WHERE username='lisi'
+
+-- 删除
+-- DELETE FROM users WHERE username='lisi'
+
+-- SELECT * FROM users WHERE state='0';  --  <>不等于符号
+-- UPDATE users SET state='1' WHERE username ='lisi';  -- 软删除
+
